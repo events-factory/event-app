@@ -10,9 +10,9 @@ const Auth = createStackNavigator({
     navigationOptions: {
       title: "Login",
       headerStyle: {
-        backgroundColor: "#307ecc",
+        backgroundColor: "#04194c",
       },
-      headerTintColor: "#fff",
+      headerTintColor: "#ccc",
     },
   },
 });
