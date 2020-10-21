@@ -1,33 +1,27 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const FieldButton = ({ title, style, onPress }) => {
+const TextButton = ({ title, style, onPress }) => {
   return (
     <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
-      <Text style={styles.text}>{title.toUpperCase()}</Text>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 };
 
-export default FieldButton;
+export default TextButton;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#0e3a89",
     width: "90%",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 8,
-    marginVertical: 10,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: "#55565a",
-    color: "#55565a",
+    padding: 20,
   },
 
   text: {
-    color: "#ccc",
+    color: "#04194c",
     fontWeight: "500",
-    fontSize: 17,
+    fontSize: 14,
   },
 });

@@ -8,7 +8,7 @@ const LoadingScene = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setAnimated(false);
-      props.navigation.navigate((value = "Auth"));
+      props.navigation.navigate((value = "AuthScene"));
     }, 5000);
   }, []);
   return (

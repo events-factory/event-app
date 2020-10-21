@@ -1,6 +1,7 @@
 import React from "react";
 import LoadingScene from "./scenes/LoadingScene";
 import AuthScene from "./scenes/AuthScene";
+import ResetPasswordScene from "./scenes/ResetPasswordScene";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
@@ -9,6 +10,17 @@ const Auth = createStackNavigator({
     screen: AuthScene,
     navigationOptions: {
       title: "Login",
+      headerStyle: {
+        backgroundColor: "#04194c",
+      },
+      headerTintColor: "#ccc",
+    },
+  },
+
+  ResetPasswordScene: {
+    screen: ResetPasswordScene,
+    navigationOptions: {
+      title: "Reset Password",
       headerStyle: {
         backgroundColor: "#04194c",
       },
