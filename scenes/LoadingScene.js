@@ -1,12 +1,26 @@
-import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Image, Text, StyleSheet, ActivityIndicator } from "react-native";
 import Logo from "../assets/logo.jpeg";
 
-const LoadingScene = () => {
+const LoadingScene = (props) => {
+  let [animating, setAnimated] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimated(false);
+      props.navigation.navigate((value = "Auth"));
+    }, 5000);
+  }, []);
   return (
-    <View style={StyleSheet.container}>
+    <View style={styles.container}>
       <Image style={styles.logo} resizeMode="contain" source={Logo} />
-      <Text>copyright &copy; 2020...</Text>
+      <Text>copyright &copy; 2020.</Text>
+      <ActivityIndicator
+        animating={animating}
+        color="#FFFFFF"
+        size="large"
+        style={styles.activityIndicator}
+      />
     </View>
   );
 };
@@ -16,11 +30,15 @@ export default LoadingScene;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "blue",
+    color: "white",
     justifyContent: "center",
     alignItems: "center",
   },
   logo: {
-    width: 100,
+    width: 200,
+  },
+  activityIndicator: {
+    alignItems: "center",
+    height: 80,
   },
 });
