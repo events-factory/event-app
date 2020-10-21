@@ -17,8 +17,8 @@ This is a mobile app...
 
 - Clone the project in your local machine;
 - cd into the project directory;
-- run `yarn install`
-- run `yarn start`
+- run `yarn`
+- run `expo start`
 - Open the expo-client app in your android device
 - scan the QR code
 
