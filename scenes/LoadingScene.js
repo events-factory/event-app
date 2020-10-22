@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, Image, Text, StyleSheet, ActivityIndicator } from "react-native";
-import Logo from "../assets/logo.png";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import Logo from "../components/Logo";
 
 const LoadingScene = (props) => {
   let [animating, setAnimated] = useState(true);
@@ -13,7 +13,7 @@ const LoadingScene = (props) => {
   }, []);
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} resizeMode="contain" source={Logo} />
+      <Logo />
       <Text style={styles.copy}>copyright &copy; 2020.</Text>
       <ActivityIndicator
         animating={animating}
@@ -34,10 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  logo: {
-    width: 200,
-    height: 200,
-  },
+
   copy: {
     position: "absolute",
     bottom: 10,

@@ -11,9 +11,9 @@ const Auth = createStackNavigator({
     navigationOptions: {
       title: "Login",
       headerStyle: {
-        backgroundColor: "#04194c",
+        backgroundColor: "#ddd",
       },
-      headerTintColor: "#ccc",
+      headerTintColor: "#2f609b",
     },
   },
 
@@ -22,9 +22,9 @@ const Auth = createStackNavigator({
     navigationOptions: {
       title: "Reset Password",
       headerStyle: {
-        backgroundColor: "#04194c",
+        backgroundColor: "#ddd",
       },
-      headerTintColor: "#ccc",
+      headerTintColor: "#2f609b",
     },
   },
 });
