@@ -2,7 +2,6 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 const FeedScene = () => {
-  global.currentScreenIndex = "FeedScene";
   return (
     <View style={styles.container}>
       <Text>Hello Feed Scene!</Text>

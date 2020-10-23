@@ -10,6 +10,10 @@ const CustomSidebarMenu = (props) => {
       screenToNavigate: "FeedScene",
     },
     {
+      navOptionName: "Landing",
+      screenToNavigate: "LandingScene",
+    },
+    {
       navOptionName: "Logout",
       screenToNavigate: "logout",
     },
@@ -53,7 +57,6 @@ const CustomSidebarMenu = (props) => {
             {"About React".charAt(0)}
           </Text>
         </View>
-        <Text style={stylesSidebar.profileHeaderText}>AboutReact</Text>
       </View>
       <View style={stylesSidebar.profileHeaderLine} />
       <View style={{ width: "100%", flex: 1 }}>
@@ -89,6 +92,8 @@ const stylesSidebar = StyleSheet.create({
     width: "100%",
     height: "100%",
     backgroundColor: "#325ca6",
+    justifyContent: "center",
+    alignItems: "center",
     paddingTop: 40,
     color: "white",
   },

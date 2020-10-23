@@ -6,6 +6,7 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 import FeedScene from "./drawerScenes/FeedScene";
 import CustomSidebarMenu from "../components/CustomSidebarMenu";
 import NavigationDrawerHeader from "../components/NavigationDrawerHeader";
+import LandingScene from "./drawerScenes/LandingScene";
 
 const FirstActivity_StackNavigator = createStackNavigator({
   First: {
@@ -21,34 +22,34 @@ const FirstActivity_StackNavigator = createStackNavigator({
   },
 });
 
-// const SecondActivity_StackNavigator = createStackNavigator({
-//   First: {
-//     screen: SettingsScreen,
-//     navigationOptions: ({ navigation }) => ({
-//       title: "Setting Screen",
-//       headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
-//       headerStyle: {
-//         backgroundColor: "#325ca6",
-//       },
-//       headerTintColor: "#fff",
-//     }),
-//   },
-// });
+const SecondActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: LandingScene,
+    navigationOptions: ({ navigation }) => ({
+      title: "Landing",
+      headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: "#325ca6",
+      },
+      headerTintColor: "#fff",
+    }),
+  },
+});
 
 const DrawerNavigatorRoutes = createDrawerNavigator(
   {
     FeedScene: {
       screen: FirstActivity_StackNavigator,
       navigationOptions: {
-        drawerLabel: "Feed",
+        drawerLabel: "FeedScene",
       },
     },
-    // SettingsScreen: {
-    //   screen: SecondActivity_StackNavigator,
-    //   navigationOptions: {
-    //     drawerLabel: "Setting Screen",
-    //   },
-    // },
+    LandingScene: {
+      screen: SecondActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "LandingScene",
+      },
+    },
   },
   {
     contentComponent: CustomSidebarMenu,
