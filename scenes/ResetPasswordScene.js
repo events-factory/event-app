@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import Input from "../components/Input";
 import FieldButton from "../components/FieldButton";
 import Error from "../components/Error";
-import {Logo} from "../components/Logo";
+import { Logo } from "../components/Logo";
 
 const ResetPasswordScene = ({ children, style, ...props }) => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import LoadingScene from "./scenes/LoadingScene";
 import AuthScene from "./scenes/AuthScene";
 import ResetPasswordScene from "./scenes/ResetPasswordScene";
@@ -21,8 +20,6 @@ const Auth = createStackNavigator({
       headerStyle: {
         backgroundColor: "#fff",
         height: 70,
-        paddingTop: 20,
-        paddingBottom: 20
       },
       headerTintColor: "#325ca6",
     },
