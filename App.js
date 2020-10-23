@@ -24,7 +24,6 @@ const Auth = createStackNavigator({
       title: "Reset Password",
       headerStyle: {
         backgroundColor: "#307ecc",
-        
       },
       headerTintColor: "#fff",
     },
