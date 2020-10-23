@@ -10,22 +10,21 @@ const Auth = createStackNavigator({
   AuthScene: {
     screen: AuthScene,
     navigationOptions: {
-      title: "Login",
-      headerStyle: {
-        backgroundColor: "#307ecc",
-      },
-      headerTintColor: "#fff",
+      headerShown: false,
     },
   },
 
   ResetPasswordScene: {
     screen: ResetPasswordScene,
     navigationOptions: {
-      title: "Reset Password",
+      title: "",
       headerStyle: {
-        backgroundColor: "#307ecc",
+        backgroundColor: "#fff",
+        height: 70,
+        paddingTop: 20,
+        paddingBottom: 20
       },
-      headerTintColor: "#fff",
+      headerTintColor: "#325ca6",
     },
   },
 });

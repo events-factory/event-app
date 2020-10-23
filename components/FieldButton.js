@@ -13,7 +13,7 @@ export default FieldButton;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#307ecc",
+    backgroundColor: "#325ca6",
     width: "90%",
     alignItems: "center",
     justifyContent: "center",
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     padding: 10,
     borderWidth: 1,
-    borderColor: "#55565a",
+    borderColor: "#325ca6",
     color: "#fff",
   },
 
   text: {
-    color: "#ccc",
+    color: "#fff",
     fontWeight: "500",
     fontSize: 17,
   },

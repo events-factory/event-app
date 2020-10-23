@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: "#55565a",
-    color: "#55565a",
+    borderColor: "#325ca6",
+    color: "black",
   },
 });

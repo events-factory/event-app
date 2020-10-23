@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
-import Logo from "../components/Logo";
+import {LogoLoadingScene} from "../components/Logo";
 
 const LoadingScene = (props) => {
   let [animating, setAnimated] = useState(true);
@@ -13,7 +13,7 @@ const LoadingScene = (props) => {
   }, []);
   return (
     <View style={styles.container}>
-      <Logo />
+      <LogoLoadingScene />
       <Text style={styles.copy}>copyright &copy; 2020.</Text>
       <ActivityIndicator
         animating={animating}
