@@ -14,7 +14,7 @@ const FirstActivity_StackNavigator = createStackNavigator({
       title: "Feed",
       headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: "#307ecc",
+        backgroundColor: "#325ca6",
       },
       headerTintColor: "#fff",
     }),
@@ -28,7 +28,7 @@ const FirstActivity_StackNavigator = createStackNavigator({
 //       title: "Setting Screen",
 //       headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
 //       headerStyle: {
-//         backgroundColor: "#307ecc",
+//         backgroundColor: "#325ca6",
 //       },
 //       headerTintColor: "#fff",
 //     }),

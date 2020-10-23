@@ -6,7 +6,7 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import Input from "../components/Input";
-import Logo from "../components/Logo";
+import {Logo} from "../components/Logo";
 import FieldButton from "../components/FieldButton";
 import TextButton from "../components/TextButton";
 import Error from "../components/Error";
@@ -36,7 +36,7 @@ const AuthScene = ({ children, style, ...props }) => {
     setLoading(true);
   };
   return (
-    <View style={{ flex: 1, backgroundColor: "#ccc" }}>
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <Loader loading={loading} />
       <ScrollView keyboardShouldPersistTaps="handled">
         <KeyboardAvoidingView style={styles.container} enabled>
@@ -79,7 +79,7 @@ export default AuthScene;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ccc",
+    backgroundColor: "#fff",
     justifyContent: "flex-start",
     alignItems: "center",
     marginVertical: 50,
