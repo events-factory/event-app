@@ -24,11 +24,13 @@ export default LandingScene;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#fff",
+    alignItems: "center",
     flex: 1,
   },
   logo: {
     position: "absolute",
-    top: -170,
+    top: "-20%",
     left: "5%",
     width: "90%",
     height: "100%",
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
     width: "90%",
     backgroundColor: "#325ca6",
     position: "absolute",
-    bottom: 280,
+    bottom: "30%",
     left: "5%",
     textAlign: "center",
     color: "#fff",
