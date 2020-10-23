@@ -13,16 +13,16 @@ export default FieldButton;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2f609b",
+    backgroundColor: "#307ecc",
     width: "90%",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 8,
+    borderRadius: 20,
     marginVertical: 10,
     padding: 10,
     borderWidth: 1,
     borderColor: "#55565a",
-    color: "#55565a",
+    color: "#fff",
   },
 
   text: {

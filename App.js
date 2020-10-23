@@ -4,6 +4,7 @@ import AuthScene from "./scenes/AuthScene";
 import ResetPasswordScene from "./scenes/ResetPasswordScene";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
+import DrawerNavigationRoutes from "./scenes/DrawerNavigationRoutes";
 
 const Auth = createStackNavigator({
   AuthScene: {
@@ -11,9 +12,9 @@ const Auth = createStackNavigator({
     navigationOptions: {
       title: "Login",
       headerStyle: {
-        backgroundColor: "#ddd",
+        backgroundColor: "#307ecc",
       },
-      headerTintColor: "#2f609b",
+      headerTintColor: "#fff",
     },
   },
 
@@ -22,9 +23,10 @@ const Auth = createStackNavigator({
     navigationOptions: {
       title: "Reset Password",
       headerStyle: {
-        backgroundColor: "#ddd",
+        backgroundColor: "#307ecc",
+        
       },
-      headerTintColor: "#2f609b",
+      headerTintColor: "#fff",
     },
   },
 });
@@ -38,6 +40,12 @@ const App = createSwitchNavigator({
   },
   Auth: {
     screen: Auth,
+  },
+  DrawerNavigationRoutes: {
+    screen: DrawerNavigationRoutes,
+    navigationOptions: {
+      headerShown: false,
+    },
   },
 });
 
