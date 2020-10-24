@@ -1,6 +1,7 @@
 import React from "react";
 
 import { View, StyleSheet, Text, Alert } from "react-native";
+import UserProfileScene from "../scenes/drawerScenes/UserProfileScene";
 //import AsyncStorage from '@react-native-community/async-storage';
 
 const CustomSidebarMenu = (props) => {
@@ -10,12 +11,28 @@ const CustomSidebarMenu = (props) => {
       screenToNavigate: "FeedScene",
     },
     {
+      navOptionName: "Profile",
+      screenToNavigate: "ProfileScene",
+    },
+    {
       navOptionName: "Landing",
       screenToNavigate: "LandingScene",
     },
     {
       navOptionName: "Chat",
       screenToNavigate: "ChatScene",
+    },
+    {
+      navOptionName: "Attendees",
+      screenToNavigate: "AttendeesScene",
+    },
+    {
+      navOptionName: "Program",
+      screenToNavigate: "ProgramScene",
+    },
+    {
+      navOptionName: "Sponsors",
+      screenToNavigate: "SponsorsScene",
     },
     {
       navOptionName: "Logout",
@@ -57,7 +74,10 @@ const CustomSidebarMenu = (props) => {
     <View style={stylesSidebar.sideMenuContainer}>
       <View style={stylesSidebar.profileHeader}>
         <View style={stylesSidebar.profileHeaderPicCircle}>
-          <Text style={{ fontSize: 25, color: "#325ca6" }}>
+          <Text
+            style={{ fontSize: 25, color: "#325ca6" }}
+            onPress={props.navigation.navigate((value = "UserProfileScene"))}
+          >
             {"About React".charAt(0)}
           </Text>
         </View>

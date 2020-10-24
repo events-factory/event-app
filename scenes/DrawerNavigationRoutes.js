@@ -8,6 +8,10 @@ import CustomSidebarMenu from "../components/CustomSidebarMenu";
 import NavigationDrawerHeader from "../components/NavigationDrawerHeader";
 import LandingScene from "./drawerScenes/LandingScene";
 import ChannelScreen from "./drawerScenes/ChatScene";
+import AttendesScene from "./drawerScenes/AttendeesScene";
+import ProgramScene from "./drawerScenes/ProgramScene";
+import SponsorsScene from "./drawerScenes/SponsorsScene";
+import UserProfileScene from "./drawerScenes/UserProfileScene";
 
 const FirstActivity_StackNavigator = createStackNavigator({
   First: {
@@ -51,6 +55,62 @@ const ThirdActivity_StackNavigator = createStackNavigator({
   },
 });
 
+const FourthActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: AttendesScene,
+    navigationOptions: ({ navigation }) => ({
+      title: "AttebdesScene",
+      headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: "#325ca6",
+      },
+      headerTintColor: "#fff",
+    }),
+  },
+});
+
+const FithActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: ProgramScene,
+    navigationOptions: ({ navigation }) => ({
+      title: "ProgramScene",
+      headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: "#325ca6",
+      },
+      headerTintColor: "#fff",
+    }),
+  },
+});
+
+const SixthActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: SponsorsScene,
+    navigationOptions: ({ navigation }) => ({
+      title: "AttebdesScene",
+      headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: "#325ca6",
+      },
+      headerTintColor: "#fff",
+    }),
+  },
+});
+
+const SeventhActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: UserProfileScene,
+    navigationOptions: ({ navigation }) => ({
+      title: "Profile",
+      headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: "#325ca6",
+      },
+      headerTintColor: "#fff",
+    }),
+  },
+});
+
 const DrawerNavigatorRoutes = createDrawerNavigator(
   {
     FeedScene: {
@@ -69,6 +129,30 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
       screen: ThirdActivity_StackNavigator,
       navigationOptions: {
         drawerLabel: "ChatScene",
+      },
+    },
+    AttendeesScene: {
+      screen: FourthActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "AttendeesScene",
+      },
+    },
+    ProgramScene: {
+      screen: FithActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "ProgramScene",
+      },
+    },
+    SponsorsScene: {
+      screen: SixthActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "SponsorsScene",
+      },
+    },
+    UserProfileScene: {
+      screen: SeventhActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "UserProfileScene",
       },
     },
   },

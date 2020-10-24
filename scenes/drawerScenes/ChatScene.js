@@ -27,7 +27,7 @@ const firebaseConfig = {
 
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  //firebase.analytics();
 }
 
 //LogBox.ignoreWarnings(["Setting a timer for a long period of time"]);

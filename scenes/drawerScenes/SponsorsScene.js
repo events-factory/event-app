@@ -1,15 +1,15 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-const FeedScene = () => {
+const SponsorsScene = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello Feed Scene from Theo</Text>
+      <Text>Hello Sponsors</Text>
     </View>
   );
 };
 
-export default FeedScene;
+export default SponsorsScene;
 
 const styles = StyleSheet.create({
   container: {
