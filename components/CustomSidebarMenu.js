@@ -14,6 +14,10 @@ const CustomSidebarMenu = (props) => {
       screenToNavigate: "LandingScene",
     },
     {
+      navOptionName: "Chat",
+      screenToNavigate: "ChatScene",
+    },
+    {
       navOptionName: "Logout",
       screenToNavigate: "logout",
     },
