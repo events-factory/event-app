@@ -20,16 +20,13 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     backgroundColor: "#f6f6f6",
-    borderBottomWidth: 2,
-    borderBottomColor: "#fff",
   },
   header: {
+    backgroundColor: "#ccc",
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 10,
-    borderBottomColor: "#a31720",
-    borderBottomWidth: 1,
   },
 
   text: {
