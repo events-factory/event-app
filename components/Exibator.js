@@ -5,7 +5,7 @@ const Exibator = ({ src, firstText, secondText, style }) => {
   return (
     <View style={styles.container}>
       <Image
-        style={[{ width: "100%", marginVertical: -110 }, style]}
+        style={[{ width: "100%", height: 300 }, style]}
         source={src}
         resizeMode="contain"
       />

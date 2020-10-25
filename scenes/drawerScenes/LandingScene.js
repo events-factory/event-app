@@ -1,21 +1,13 @@
 import React from "react";
+import { View, StyleSheet, Image } from "react-native";
 import Logo from "../../assets/sponsor.jpg";
-import { View, StyleSheet, Text, Image, Linking } from "react-native";
+import SponsorsLink from "../../components/SponsorsLink";
 
 const LandingScene = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.logo} resizeMode="contain" source={Logo} />
-      <Text
-        style={styles.text}
-        onPress={() =>
-          Linking.openURL(
-            "https://eventme.eventsfactory.rw/Sponsors/5f68b1eec0bff"
-          )
-        }
-      >
-        Visite our sponsors
-      </Text>
+      <SponsorsLink />
     </View>
   );
 };

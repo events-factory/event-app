@@ -4,8 +4,11 @@ import Img from "../../assets/sponsors.jpeg";
 import Insurance from "../../assets/insurance.jpg";
 import Lody from "../../assets/lody.jpeg";
 import Logo from "../../assets/sponsor.jpg";
+import Australia from "../../assets/australia.jpg";
+import Standard from "../../assets/standard.jpg";
 import Sponsor from "../../components/Sponsor";
 import Exibator from "../../components/Exibator";
+import SponsorsLink from "../../components/SponsorsLink";
 
 const SponsorsScene = () => {
   return (
@@ -23,14 +26,24 @@ const SponsorsScene = () => {
           <Sponsor src={Logo} />
         </View>
         <Exibator
-          src={Img}
-          firstText="EXHIBITION BOOTH 3X3"
-          secondText="1500 USD"
+          src={Australia}
+          firstText="AUSTRALIA MEETING ROOM"
+          secondText="2500 USD"
+        />
+        <Exibator
+          src={Standard}
+          style={{ marginVertical: -30 }}
+          firstText="STANDARD MEETING ROOM"
+          secondText="450 USD"
         />
         <Exibator
           src={Img}
+          style={{ marginVertical: -15 }}
           firstText="EXHIBITION BOOTH 3X3"
           secondText="1500 USD"
+        />
+        <SponsorsLink
+          style={{ position: "relative", marginVertical: 10, bottom: 0 }}
         />
       </ScrollView>
     </View>
