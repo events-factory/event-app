@@ -12,6 +12,7 @@ import AttendesScene from "./drawerScenes/AttendeesScene";
 import ProgramScene from "./drawerScenes/ProgramScene";
 import SponsorsScene from "./drawerScenes/SponsorsScene";
 import UserProfileScene from "./drawerScenes/UserProfileScene";
+import { Ionicons } from "@expo/vector-icons";
 
 const FirstActivity_StackNavigator = createStackNavigator({
   First: {
@@ -59,7 +60,7 @@ const FourthActivity_StackNavigator = createStackNavigator({
   First: {
     screen: AttendesScene,
     navigationOptions: ({ navigation }) => ({
-      title: "AttebdesScene",
+      title: "Attendees",
       headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: "#325ca6",
@@ -87,7 +88,7 @@ const SixthActivity_StackNavigator = createStackNavigator({
   First: {
     screen: SponsorsScene,
     navigationOptions: ({ navigation }) => ({
-      title: "AttebdesScene",
+      title: "Sponsors",
       headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: "#325ca6",

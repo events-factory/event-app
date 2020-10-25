@@ -1,10 +1,11 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const FeedScene = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello Feed Scene from Theo</Text>
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
     </View>
   );
 };

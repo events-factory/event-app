@@ -32,51 +32,48 @@ if (firebase.apps.length === 0) {
 
 //LogBox.ignoreWarnings(["Setting a timer for a long period of time"]);
 
-const db = firebase.firestore();
-const chatRef = db.collection("chats");
+// const db = firebase.firestore();
+// const chatRef = db.collection("chats");
 
 const ChannelScreen = () => {
-  const [user, setUser] = useState(null);
+  //   const [user, setUser] = useState(null);
   //const [name, setName] = useState("");
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-    //readUser();
-    const unsubscribe = chatRef.onSnapshot((querySnapshot) => {
-      const messagesFirestore = querySnapshot
-        .docChanges()
-        .filter(({ type }) => type === "added")
-        .map(({ doc }) => {
-          const message = doc.data();
-          return { ...message, createdAt: message.createdAt.toDate() };
-        })
-        .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
-      appendMessages(messagesFirestore);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  const appendMessages = useCallback(
-    (messages) => {
-      setMessages((previousMessages) =>
-        GiftedChat.append(previousMessages, messages)
-      );
-    },
-    [messages]
-  );
-
-  async function handleSend(messages) {
-    const writes = messages.map((m) => chatsRef.add(m));
-    await Promise.all(writes);
-  }
+  //   const [messages, setMessages] = useState([]);
+  //   useEffect(() => {
+  //     //readUser();
+  //     const unsubscribe = chatRef.onSnapshot((querySnapshot) => {
+  //       const messagesFirestore = querySnapshot
+  //         .docChanges()
+  //         .filter(({ type }) => type === "added")
+  //         .map(({ doc }) => {
+  //           const message = doc.data();
+  //           return { ...message, createdAt: message.createdAt.toDate() };
+  //         })
+  //         .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+  //       appendMessages(messagesFirestore);
+  //     });
+  //     return () => unsubscribe();
+  //   }, []);
+  //   const appendMessages = useCallback(
+  //     (messages) => {
+  //       setMessages((previousMessages) =>
+  //         GiftedChat.append(previousMessages, messages)
+  //       );
+  //     },
+  //     [messages]
+  //   );
+  //   async function handleSend(messages) {
+  //     const writes = messages.map((m) => chatsRef.add(m));
+  //     await Promise.all(writes);
+  //   }
   // async function readUser() {
   //   const user = await AsyncStorage.getItem("user");
   //   if (user) {
   //     setUser(JSON.parse(user));
   //   }
   // }
-
-  return <GiftedChat messages={messages} user={user} onSend={handleSend} />;
+  //return <GiftedChat messages={messages} user={user} onSend={handleSend} />;
+  return <GiftedChat />;
 };
 
 export default ChannelScreen;

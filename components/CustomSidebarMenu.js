@@ -12,7 +12,7 @@ const CustomSidebarMenu = (props) => {
     },
     {
       navOptionName: "Profile",
-      screenToNavigate: "ProfileScene",
+      screenToNavigate: "UserProfileScene",
     },
     {
       navOptionName: "Landing",
@@ -74,10 +74,7 @@ const CustomSidebarMenu = (props) => {
     <View style={stylesSidebar.sideMenuContainer}>
       <View style={stylesSidebar.profileHeader}>
         <View style={stylesSidebar.profileHeaderPicCircle}>
-          <Text
-            style={{ fontSize: 25, color: "#325ca6" }}
-            onPress={props.navigation.navigate((value = "UserProfileScene"))}
-          >
+          <Text style={{ fontSize: 25, color: "#325ca6" }}>
             {"About React".charAt(0)}
           </Text>
         </View>
