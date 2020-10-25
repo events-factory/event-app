@@ -74,7 +74,7 @@ const FithActivity_StackNavigator = createStackNavigator({
   First: {
     screen: ProgramScene,
     navigationOptions: ({ navigation }) => ({
-      title: "ProgramScene",
+      title: "Program",
       headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: "#325ca6",
