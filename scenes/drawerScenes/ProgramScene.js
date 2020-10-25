@@ -58,9 +58,14 @@ const ProgramScene = () => {
       <ScrollView>
         {programs.container.map((program) => (
           <View>
-            <ProgramHeader day={program.day} date={program.date} />
+            <ProgramHeader
+              key={program.day}
+              day={program.day}
+              date={program.date}
+            />
             {program.actions.map((action) => (
               <Program
+                key={action.hour}
                 hour={action.hour}
                 conference={action.conference}
                 content={action.content}
