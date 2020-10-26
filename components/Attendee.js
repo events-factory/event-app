@@ -6,8 +6,7 @@ const Attendee = ({ name, picture }) => {
     <View style={styles.container}>
       <Image
         source={picture}
-        resizeMode="contain"
-        style={{ width: 100, height: 100, borderRadius: 50 }}
+        style={{ width: 50, height: 50, borderRadius: 25 }}
       />
       <Text style={styles.text}>{name}</Text>
     </View>
@@ -18,10 +17,10 @@ export default Attendee;
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#ccc",
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 10,
-    flex: 1,
     width: "100%",
     borderBottomColor: "#000",
     borderBottomWidth: 1,

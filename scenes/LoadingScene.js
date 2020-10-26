@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
-import {LogoLoadingScene} from "../components/Logo";
+import { LogoLoadingScene } from "../components/Logo";
 
 const LoadingScene = (props) => {
   let [animating, setAnimated] = useState(true);
@@ -8,7 +8,7 @@ const LoadingScene = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setAnimated(false);
-      props.navigation.navigate((value = "AuthScene"));
+      props.navigation.navigate("AuthScene");
     }, 5000);
   }, []);
   return (
