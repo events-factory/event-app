@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import Attendees from "../../components/Attendee";
 
 const attendees = {
@@ -17,16 +17,24 @@ const attendees = {
   ],
 };
 
-const AttendeesScene = () => {
+const AttendeesScene = (props) => {
   return (
     <View style={styles.container}>
-      {attendees.profile.map((attendee) => (
-        <Attendees
-          key={attendee.name}
-          name={attendee.name}
-          picture={{ uri: attendee.picture }}
-        />
-      ))}
+      <ScrollView style={{ width: "100%" }}>
+        {attendees.profile.map((attendee) => (
+          <Attendees
+            key={attendee.name}
+            name={attendee.name}
+            picture={{ uri: attendee.picture }}
+            onPress={() =>
+              props.navigation.navigate("AttendeeProfileScene", {
+                name: attendee.name,
+                picture: attendee.picture,
+              })
+            }
+          />
+        ))}
+      </ScrollView>
     </View>
   );
 };

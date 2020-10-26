@@ -1,7 +1,7 @@
 import React from "react";
 
 import { View, StyleSheet, Text, Alert } from "react-native";
-import UserProfileScene from "../scenes/drawerScenes/UserProfileScene";
+
 //import AsyncStorage from '@react-native-community/async-storage';
 
 const CustomSidebarMenu = (props) => {

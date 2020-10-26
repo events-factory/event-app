@@ -12,7 +12,7 @@ import AttendesScene from "./drawerScenes/AttendeesScene";
 import ProgramScene from "./drawerScenes/ProgramScene";
 import SponsorsScene from "./drawerScenes/SponsorsScene";
 import UserProfileScene from "./drawerScenes/UserProfileScene";
-import { Ionicons } from "@expo/vector-icons";
+import AttendeeProfileScene from "./drawerScenes/AttendeeProfileScene";
 
 const FirstActivity_StackNavigator = createStackNavigator({
   First: {
@@ -112,6 +112,20 @@ const SeventhActivity_StackNavigator = createStackNavigator({
   },
 });
 
+const EighthActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: AttendeeProfileScene,
+    navigationOptions: ({ navigation }) => ({
+      title: "Attendee",
+      headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: "#325ca6",
+      },
+      headerTintColor: "#fff",
+    }),
+  },
+});
+
 const DrawerNavigatorRoutes = createDrawerNavigator(
   {
     FeedScene: {
@@ -154,6 +168,12 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
       screen: SeventhActivity_StackNavigator,
       navigationOptions: {
         drawerLabel: "UserProfileScene",
+      },
+    },
+    AttendeeProfileScene: {
+      screen: EighthActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "AttendeeProfileScene",
       },
     },
   },

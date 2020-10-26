@@ -17,7 +17,7 @@ const LoadingScene = (props) => {
       <Text style={styles.copy}>copyright &copy; 2020.</Text>
       <ActivityIndicator
         animating={animating}
-        color="#FFFFFF"
+        color="#fff"
         size="large"
         style={styles.activityIndicator}
       />

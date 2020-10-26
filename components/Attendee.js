@@ -1,15 +1,15 @@
 import React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { TouchableOpacity, StyleSheet, Image, Text } from "react-native";
 
-const Attendee = ({ name, picture }) => {
+const Attendee = ({ name, picture, onPress }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image
         source={picture}
         style={{ width: 50, height: 50, borderRadius: 25 }}
       />
       <Text style={styles.text}>{name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
