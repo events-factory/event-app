@@ -11,7 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faEdit,
   faTrashAlt,
-  faComment,
+  faComments,
+  faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 const posts = {
@@ -75,7 +76,7 @@ const FeedScene = () => {
             style={{ width: "100%", height: 100, marginLeft: 25 }}
           />
           <View style={styles.icons}>
-            <FontAwesomeIcon size={20} icon={faComment} style={styles.icon} />
+            <FontAwesomeIcon size={20} icon={faComments} style={styles.icon} />
             <FontAwesomeIcon size={20} icon={faEdit} style={styles.icon} />
             <FontAwesomeIcon
               size={20}
@@ -85,6 +86,7 @@ const FeedScene = () => {
           </View>
         </View>
       ))}
+      <FontAwesomeIcon size={40} icon={faPlusCircle} style={styles.add} />
     </ScrollView>
   );
 };
@@ -113,5 +115,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: "100%",
     marginLeft: 10,
+  },
+  add: {
+    position: "absolute",
+    bottom: 5,
+    right: 5,
+    color: "green",
   },
 });
