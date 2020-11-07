@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   TouchableOpacity,
+  Alert,
   StyleSheet,
   Image,
   Text,
@@ -46,48 +47,92 @@ const posts = {
   ],
 };
 
-const FeedScene = () => {
+const FeedScene = ({ ...props }) => {
+  const [pubs, setPubs] = useState(posts.profile);
+  const filterPubs = () => setPubs(pubs.filter((pub) => pub.id));
+  const handleDelete = () => {
+    Alert.alert(
+      "Delete post",
+      "Are you sure to delete this post?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "OK",
+          onPress: () => filterPubs(),
+        },
+      ],
+      { cancelable: false }
+    );
+  };
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {posts.profile.map((post) => (
-        <View
-          style={{
-            width: "80%",
-            marginBottom: 10,
-          }}
-          key={post.key}
-        >
+    <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={{
+          width: "100%",
+          justifyContent: "flex-start",
+          alignItems: "center",
+        }}
+      >
+        {pubs.map((post) => (
           <View
             style={{
-              width: "100%",
-              flexDirection: "row",
-              justifyContent: "center",
+              width: "80%",
+              marginBottom: 10,
             }}
+            key={post.key}
           >
+            <View
+              style={{
+                width: "100%",
+                flexDirection: "row",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                source={post.image}
+                style={{ width: 50, height: 50, borderRadius: 25 }}
+              />
+
+              <Text style={styles.text}>{post.content}</Text>
+            </View>
             <Image
               source={post.picture}
-              style={{ width: 50, height: 50, borderRadius: 25 }}
+              style={{ width: "100%", height: 200, marginLeft: 25 }}
             />
-
-            <Text style={styles.text}>{post.content}</Text>
+            <View style={styles.icons}>
+              <FontAwesomeIcon
+                size={20}
+                icon={faComments}
+                style={styles.icon}
+                onPress={() => props.navigation.navigate("CommentScene")}
+              />
+              <FontAwesomeIcon
+                size={20}
+                icon={faEdit}
+                style={styles.icon}
+                onPress={() => props.navigation.navigate("NewFeedScene")}
+              />
+              <FontAwesomeIcon
+                size={20}
+                icon={faTrashAlt}
+                style={[styles.icon, { color: "#a31720" }]}
+                onPress={handleDelete}
+              />
+            </View>
           </View>
-          <Image
-            source={post.picture}
-            style={{ width: "100%", height: 100, marginLeft: 25 }}
-          />
-          <View style={styles.icons}>
-            <FontAwesomeIcon size={20} icon={faComments} style={styles.icon} />
-            <FontAwesomeIcon size={20} icon={faEdit} style={styles.icon} />
-            <FontAwesomeIcon
-              size={20}
-              icon={faTrashAlt}
-              style={[styles.icon, { color: "#a31720" }]}
-            />
-          </View>
-        </View>
-      ))}
-      <FontAwesomeIcon size={40} icon={faPlusCircle} style={styles.add} />
-    </ScrollView>
+        ))}
+        <FontAwesomeIcon
+          size={40}
+          icon={faPlusCircle}
+          style={styles.add}
+          onPress={() => props.navigation.navigate("NewFeedScene")}
+        />
+      </ScrollView>
+    </View>
   );
 };
 
@@ -97,8 +142,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    justifyContent: "flex-start",
-    alignItems: "center",
     paddingTop: 10,
     backgroundColor: "#fff",
   },
@@ -107,7 +150,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   icon: {
-    margin: 5,
+    margin: 10,
+    padding: 10,
     color: "#325ca6",
   },
   text: {

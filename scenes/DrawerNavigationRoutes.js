@@ -1,8 +1,6 @@
 import React from "react";
-
 import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
-
 import FeedScene from "./drawerScenes/FeedScene";
 import CustomSidebarMenu from "../components/CustomSidebarMenu";
 import NavigationDrawerHeader from "../components/NavigationDrawerHeader";
@@ -13,6 +11,8 @@ import ProgramScene from "./drawerScenes/ProgramScene";
 import SponsorsScene from "./drawerScenes/SponsorsScene";
 import UserProfileScene from "./drawerScenes/UserProfileScene";
 import AttendeeProfileScene from "./drawerScenes/AttendeeProfileScene";
+import NewFeedScene from "./drawerScenes/NewFeedScene";
+import CommentScene from "./drawerScenes/CommentScene";
 
 const FirstActivity_StackNavigator = createStackNavigator({
   First: {
@@ -126,6 +126,34 @@ const EighthActivity_StackNavigator = createStackNavigator({
   },
 });
 
+const NineActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: NewFeedScene,
+    navigationOptions: {
+      title: "New Post",
+      headerStyle: {
+        backgroundColor: "#325ca6",
+        height: 70,
+      },
+      headerTintColor: "#fff",
+    },
+  },
+});
+
+const TenActivity_StackNavigator = createStackNavigator({
+  First: {
+    screen: CommentScene,
+    navigationOptions: {
+      title: "Comment",
+      headerStyle: {
+        backgroundColor: "#325ca6",
+        height: 70,
+      },
+      headerTintColor: "#fff",
+    },
+  },
+});
+
 const DrawerNavigatorRoutes = createDrawerNavigator(
   {
     FeedScene: {
@@ -174,6 +202,18 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
       screen: EighthActivity_StackNavigator,
       navigationOptions: {
         drawerLabel: "AttendeeProfileScene",
+      },
+    },
+    NewFeedScene: {
+      screen: NineActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "NewFeedScene",
+      },
+    },
+    CommentScene: {
+      screen: TenActivity_StackNavigator,
+      navigationOptions: {
+        drawerLabel: "CommentScene",
       },
     },
   },

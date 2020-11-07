@@ -1,9 +1,9 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Image, Text } from "react-native";
 
-const Attendee = ({ name, picture, onPress }) => {
+const Attendee = ({ name, picture, onPress, style }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity style={[styles.container, { style }]} onPress={onPress}>
       <Image
         source={picture}
         style={{ width: 50, height: 50, borderRadius: 25 }}
