@@ -7,7 +7,12 @@ import {
   Text,
   ScrollView,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import {
+  faEdit,
+  faTrashAlt,
+  faComment,
+} from "@fortawesome/free-solid-svg-icons";
 
 const posts = {
   profile: [
@@ -69,6 +74,15 @@ const FeedScene = () => {
             source={post.picture}
             style={{ width: "100%", height: 100, marginLeft: 25 }}
           />
+          <View style={styles.icons}>
+            <FontAwesomeIcon size={20} icon={faComment} style={styles.icon} />
+            <FontAwesomeIcon size={20} icon={faEdit} style={styles.icon} />
+            <FontAwesomeIcon
+              size={20}
+              icon={faTrashAlt}
+              style={[styles.icon, { color: "#a31720" }]}
+            />
+          </View>
         </View>
       ))}
     </ScrollView>
@@ -85,6 +99,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 10,
     backgroundColor: "#fff",
+  },
+  icons: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  icon: {
+    margin: 5,
+    color: "#325ca6",
   },
   text: {
     color: "black",
