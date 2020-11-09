@@ -125,13 +125,13 @@ const FeedScene = ({ ...props }) => {
             </View>
           </View>
         ))}
-        <FontAwesomeIcon
-          size={40}
-          icon={faPlusCircle}
-          style={styles.add}
-          onPress={() => props.navigation.navigate("NewFeedScene")}
-        />
       </ScrollView>
+      <FontAwesomeIcon
+        size={40}
+        icon={faPlusCircle}
+        style={styles.add}
+        onPress={() => props.navigation.navigate("NewFeedScene")}
+      />
     </View>
   );
 };
