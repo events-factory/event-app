@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  TouchableOpacity,
-  Alert,
-  StyleSheet,
-  Image,
-  Text,
-  ScrollView,
-} from "react-native";
+import { View, Alert, StyleSheet, Image, Text, ScrollView } from "react-native";
+
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faEdit,
@@ -16,10 +9,15 @@ import {
   faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { useFonts } from "@use-expo/font";
+import { AppLoading } from "expo";
+
 const posts = {
   profile: [
     {
       key: "1",
+      name: "Aime",
+      date: "15-11-2020",
       picture: {
         uri:
           "https://scontent-mba1-1.xx.fbcdn.net/v/t31.0-8/15304405_994165557379031_7230717905270255677_o.jpg?_nc_cat=109&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeEf3RuGhtTRylL1RsH9bkin16WS3lv5Nf7XpZLeW_k1_ssawlUEzriwXeBHdzxBu6_F_azxKDNlqCTK2JgT5Xjp&_nc_ohc=tLiit9O340EAX_-v25o&_nc_ht=scontent-mba1-1.xx&oh=23d26a740f7551eff45857f0dca78b71&oe=5FBB5512",
@@ -33,6 +31,8 @@ const posts = {
     },
     {
       key: "2",
+      name: "Adeline",
+      date: "15-11-2020",
       picture: {
         uri:
           "https://scontent-mba1-1.xx.fbcdn.net/v/t1.0-9/119214530_1221995164832117_961476674865061706_n.jpg?_nc_cat=111&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeExxRImR8sm95q-SCTPlfOAnnis_pLXMD6eeKz-ktcwPlVfbTYLQeXyYeK-j73SSI9_R57HKiBQuW-CcphlPNTT&_nc_ohc=dXGAQRyt2kwAX8KJql4&_nc_ht=scontent-mba1-1.xx&oh=5025f95c026ece042d532ac7e160e674&oe=5FBA469B",
@@ -50,6 +50,7 @@ const posts = {
 const FeedScene = ({ ...props }) => {
   const [pubs, setPubs] = useState(posts.profile);
   const filterPubs = () => setPubs(pubs.filter((pub) => pub.id));
+
   const handleDelete = () => {
     Alert.alert(
       "Delete post",
@@ -68,6 +69,7 @@ const FeedScene = ({ ...props }) => {
       { cancelable: false }
     );
   };
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -82,6 +84,8 @@ const FeedScene = ({ ...props }) => {
             style={{
               width: "80%",
               marginBottom: 10,
+              borderBottomWidth: 1,
+              borderBottomColor: "#ccc",
             }}
             key={post.key}
           >
@@ -147,7 +151,7 @@ const styles = StyleSheet.create({
   },
   icons: {
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-around",
   },
   icon: {
     margin: 10,
@@ -156,6 +160,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "black",
+    lineHeight: 20,
     fontSize: 15,
     width: "100%",
     marginLeft: 10,

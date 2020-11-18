@@ -9,7 +9,6 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import Constants from "expo-constants";
 import Input from "../../components/Input";
 import FieldButton from "../../components/FieldButton";
 import Loader from "../../components/Loader";

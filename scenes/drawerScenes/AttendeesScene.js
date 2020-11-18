@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  SafeAreaView,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+
+import { View, StyleSheet, FlatList } from "react-native";
 import Attendee from "../../components/Attendee";
 
 const attendees = {
@@ -40,7 +35,6 @@ const AttendeesScene = ({ navigation }) => {
         keyExtractor={(item) => item.key}
         renderItem={({ item }) => (
           <Attendee
-            key={item.key}
             name={item.name}
             picture={item.picture}
             onPress={() => navigation.navigate("AttendeeProfileScene", item)}
