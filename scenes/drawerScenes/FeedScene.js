@@ -104,17 +104,22 @@ const FeedScene = ({ ...props }) => {
               </View>
 
               <View style={{ width: "80%", marginRight: "5%" }}>
-                <Text style={[styles.text, { fontWeight: "bold" }]}>
+                <Text
+                  style={[
+                    styles.text,
+                    { fontWeight: "bold", position: "absolute" },
+                  ]}
+                >
                   {post.name}
-
-                  <Text
-                    style={[
-                      styles.text,
-                      { fontWeight: "bold", textAlign: "right" },
-                    ]}
-                  >
-                    {post.date}
-                  </Text>
+                </Text>
+                <Text
+                  style={[
+                    styles.text,
+                    { fontWeight: "bold", textAlign: "right" },
+                  ]}
+                >
+                  {post.date}
+                  {"\n"}
                 </Text>
 
                 <Text style={styles.text}>
