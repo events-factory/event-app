@@ -92,35 +92,60 @@ const FeedScene = ({ ...props }) => {
               style={{
                 width: "100%",
                 flexDirection: "row",
-                marginTop: 10,
+
                 justifyContent: "center",
               }}
             >
-              <View>
+              <View
+                style={{
+                  backgroundColor: "#ddd",
+                  height: 50,
+                  width: 50,
+                  justifyContent: "center",
+                }}
+              >
                 <Image
                   source={post.image}
-                  style={{ width: 40, height: 40, borderRadius: 20 }}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 20,
+                    marginLeft: 5,
+                  }}
                 />
               </View>
 
-              <View style={{ width: "80%", marginRight: "5%" }}>
-                <Text
-                  style={[
-                    styles.text,
-                    { fontWeight: "bold", position: "absolute" },
-                  ]}
-                >
-                  {post.name}
-                </Text>
-                <Text
-                  style={[
-                    styles.text,
-                    { fontWeight: "bold", textAlign: "right" },
-                  ]}
-                >
-                  {post.date}
-                  {"\n"}
-                </Text>
+              <View style={{ width: "80%", marginRight: "7%" }}>
+                <View style={{ width: "110%" }}>
+                  <Text
+                    style={[
+                      styles.text,
+                      {
+                        fontWeight: "bold",
+                        position: "absolute",
+                        backgroundColor: "#ddd",
+                        right: 5,
+                        padding: 15,
+                      },
+                    ]}
+                  >
+                    {post.name}
+                  </Text>
+                  <Text
+                    style={[
+                      styles.text,
+                      {
+                        fontWeight: "bold",
+                        textAlign: "right",
+                        marginLeft: -6,
+                        padding: 15,
+                      },
+                    ]}
+                  >
+                    {post.date}
+                    {"\n"}
+                  </Text>
+                </View>
 
                 <Text style={styles.text}>
                   {post.content}
@@ -133,24 +158,37 @@ const FeedScene = ({ ...props }) => {
               style={{ width: "80%", height: 200, marginLeft: "15%" }}
             />
             <View style={styles.icons}>
-              <FontAwesomeIcon
-                size={20}
-                icon={faComments}
-                style={styles.icon}
-                onPress={() => props.navigation.navigate("CommentScene")}
-              />
-              <FontAwesomeIcon
-                size={20}
-                icon={faEdit}
-                style={styles.icon}
-                onPress={() => props.navigation.navigate("NewFeedScene")}
-              />
-              <FontAwesomeIcon
-                size={20}
-                icon={faTrashAlt}
-                style={[styles.icon, { color: "#a31720" }]}
-                onPress={handleDelete}
-              />
+              <View
+                style={[
+                  styles.iconContainer,
+                  {
+                    marginLeft: 35,
+                  },
+                ]}
+              >
+                <FontAwesomeIcon
+                  size={20}
+                  icon={faComments}
+                  style={styles.icon}
+                  onPress={() => props.navigation.navigate("CommentScene")}
+                />
+              </View>
+              <View style={styles.iconContainer}>
+                <FontAwesomeIcon
+                  size={20}
+                  icon={faEdit}
+                  style={styles.icon}
+                  onPress={() => props.navigation.navigate("NewFeedScene")}
+                />
+              </View>
+              <View style={styles.iconContainer}>
+                <FontAwesomeIcon
+                  size={20}
+                  icon={faTrashAlt}
+                  style={[styles.icon, { color: "#a31720" }]}
+                  onPress={handleDelete}
+                />
+              </View>
             </View>
           </View>
         ))}
@@ -177,6 +215,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
   },
+  iconContainer: {
+    width: 80,
+    height: 30,
+    marginBottom: 10,
+    marginTop: 10,
+    backgroundColor: "#ddd",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
+  },
   icon: {
     margin: 10,
     padding: 10,
@@ -193,6 +241,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 5,
     right: 5,
-    color: "green",
+    color: "#325ca6",
   },
 });
