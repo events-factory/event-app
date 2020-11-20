@@ -82,10 +82,9 @@ const FeedScene = ({ ...props }) => {
         {pubs.map((post) => (
           <View
             style={{
-              width: "80%",
+              width: "100%",
               marginBottom: 10,
-              borderBottomWidth: 1,
-              borderBottomColor: "#ccc",
+              backgroundColor: "#f8f8ff",
             }}
             key={post.key}
           >
@@ -93,19 +92,40 @@ const FeedScene = ({ ...props }) => {
               style={{
                 width: "100%",
                 flexDirection: "row",
+                marginTop: 10,
                 justifyContent: "center",
               }}
             >
-              <Image
-                source={post.image}
-                style={{ width: 50, height: 50, borderRadius: 25 }}
-              />
+              <View>
+                <Image
+                  source={post.image}
+                  style={{ width: 40, height: 40, borderRadius: 20 }}
+                />
+              </View>
 
-              <Text style={styles.text}>{post.content}</Text>
+              <View style={{ width: "80%", marginRight: "5%" }}>
+                <Text style={[styles.text, { fontWeight: "bold" }]}>
+                  {post.name}
+
+                  <Text
+                    style={[
+                      styles.text,
+                      { fontWeight: "bold", textAlign: "right" },
+                    ]}
+                  >
+                    {post.date}
+                  </Text>
+                </Text>
+
+                <Text style={styles.text}>
+                  {post.content}
+                  {"\n"}
+                </Text>
+              </View>
             </View>
             <Image
               source={post.picture}
-              style={{ width: "100%", height: 200, marginLeft: 25 }}
+              style={{ width: "80%", height: 200, marginLeft: "15%" }}
             />
             <View style={styles.icons}>
               <FontAwesomeIcon
@@ -146,7 +166,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    paddingTop: 10,
     backgroundColor: "#fff",
   },
   icons: {
