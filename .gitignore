@@ -11,3 +11,10 @@ web-build/
 
 # macOS
 .DS_Store
+
+# --- env files (ensure-env-gitignored.sh) ---
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
